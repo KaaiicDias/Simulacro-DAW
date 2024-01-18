@@ -1,36 +1,39 @@
-public class CaracteristicaDino implements IVolador, ICaracterizable{
-    public String descripcion;
-    public int edad;
-    public String color;
-    public double longitud;
+public class CaracteristicaDino {
+    private String descripcion;
+    private int edad;
+    private String color;
+    private double longitud;
 
-    @Override
-    public String agregarCaracteristicas() {
-        return null;
+    public CaracteristicaDino(String descripcion, int edad, String color, double longitud) {
+        this.descripcion = descripcion;
+        this.edad = edad;
+        this.color = color;
+        this.longitud = longitud;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public double getLongitud() {
+        return longitud;
     }
 
     @Override
-    public String eliminarCaracteristicas(String descripcion) {
-        return null;
-    }
-
-    @Override
-    public String mostrarCaracteristicas() {
-        return null;
-    }
-
-    @Override
-    public void despegar() throws AlturaInsuficienteException {
-
-    }
-
-    @Override
-    public double calcularAlturaMaxima(int velocidad, int tiempo) throws AlturaInsuficienteException {
-        return 0;
-    }
-
-    @Override
-    public double calcularDistanciaRecorrida(int velocidad, int tiempo) {
-        return 0;
+    public String toString() {
+        return "CaracteristicaDino{" +
+                "descripcion='" + descripcion + '\'' +
+                ", edad=" + edad +
+                ", color='" + color + '\'' +
+                ", longitud=" + longitud +
+                '}';
     }
 }
