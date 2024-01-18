@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Asiento {
@@ -5,7 +6,7 @@ public class Asiento {
     public int numero;
     public double precio;
     public boolean vip;
-
+    //va a haber un array normal en el examen qeu sustituiria este ejercicio
     public Asiento(int fila, int numero, double precio, boolean vip) {
         this.fila = fila;
         this.numero = numero;
@@ -13,30 +14,25 @@ public class Asiento {
         this.vip = vip;
     }
 
-    public double calcularPrecio (String diaSemana){
-        Scanner sc = new Scanner(System.in);
-        diaSemana = sc.nextLine();
-        double precioEntrada = sc.nextInt();
-        if (diaSemana.equals("Martes")){
-            precioEntrada = (precioEntrada-(precioEntrada*0.2));
-        }else {
-            precioEntrada = precioEntrada;
+    public double calcularPrecio (String diaSemana) {
+        double precioEntrada = precio;
+        //hacen falta que el if indique las opciones de si es martes y no es vip, etc
+        if (diaSemana.equals("Martes")) {
+            precioEntrada = 0.8 * precio;
         }
-        boolean entradaVip = true;
-        if (!entradaVip){
-            precioEntrada = precioEntrada;
-        }else {
-            precioEntrada = (precioEntrada+(precioEntrada*0.2));
+
+        if (vip) {
+            precioEntrada = 1.2 * precio;
         }
         return precioEntrada;
     }
-
     @Override
     public String toString() {
-        return "Asiento =b" +
-                "F: " + fila +
-                ", numero" + "A: " + " + numero " +
-                ", vip=" + vip +
-                '}';
+        String salida = "";
+        if (vip){
+            salida = "F" + fila + " - V" + numero;
+        }else {
+            salida = "F" + fila + " - A" + numero;
+        }
+        return salida;
     }
-}
