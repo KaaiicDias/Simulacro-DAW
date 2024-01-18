@@ -1,5 +1,5 @@
 public interface ICaracterizable {
-    String agregarCaracteristicas();
-    String eliminarCaracteristicas(String descripcion);
-    String mostrarCaracteristicas();
+    void agregarCaracteristicas(CaracteristicaDino caracteristicaDino);
+    void eliminarCaracteristicas(String descripcionCaracteristica);
+    void mostrarCaracteristicas();
 }
